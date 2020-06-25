@@ -1,0 +1,27 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="IAVOrgEdit" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+ <form:SimpleForm id="SFAddressIAVOrgEdit" maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+  emptySpanL="4" emptySpanS="0" emptySpanM="4" labelSpanS="12" editable="true" class="paddingFixSF">
+  <form:content >
+   <Title text="{i18n>ADDIAV}" level="H4" titleStyle="H4">
+    <layoutData>
+     <l:GridData span="L4 M4 S6"/>
+    </layoutData>
+   </Title>
+   <HBox>
+    <core:Icon id="toolCommIAVAdd" src="sap-icon://sys-add" decorative="true" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewIAVGrp"/>
+     <core:Icon id="toolCommIAVAddDisable" src="sap-icon://sys-add" decorative="true" tooltip="Add" class="sapUiSmallMarginEnd"
+     visible="false"/>
+    <core:Icon id="toolCommIAVCancel" src="sap-icon://sys-cancel" tooltip="Cancel" class="sapGreyCell"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+   </HBox>
+  </form:content>
+ </form:SimpleForm>
+</core:FragmentDefinition>

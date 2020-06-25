@@ -1,0 +1,39 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+ <layout:VerticalLayout width="100%">
+  <form:SimpleForm columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" labelSpanL="3"
+   labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024" class="paddingFixSF">
+   <form:content >
+    <Title text="{i18n>REQ_DETAILS}" level="H4" titleStyle="H4"></Title>
+    <Label text="{i18n>REASON}"></Label>
+    <Input change="onReasonChange"></Input>
+    <!-- Extension Point for Adding new element for Edit Request Details -->
+    <core:ExtensionPoint name="extEditRequestDetailReason" />
+   </form:content>
+  </form:SimpleForm>
+
+  <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="paddingFixSF" labelSpanL="3" labelSpanM="3" emptySpanL="4"
+   emptySpanM="4" backgroundDesign="Translucent" >
+   <form:content >
+    <UploadCollection uploadUrl="/sap/opu/odata/sap/MDG_EDIT_CUSTOMER/AttachmentCollection" maximumFilenameLength="200"
+     multiple="false" showSeparators="None" items="{json>/dataitems}" uploadComplete="fcg.mdg.editbp.handlers.Attachment.onUploadFile"
+     change="fcg.mdg.editbp.handlers.Attachment.onBeforeUploadFile" fileDeleted="fcg.mdg.editbp.handlers.Attachment.onFileDeleted"
+     uploadTerminated="fcg.mdg.editbp.handlers.Attachment.uploadTerminated" uploadEnabled="true"
+     beforeUploadStarts="fcg.mdg.editbp.handlers.Attachment.onFileStartsUploading">
+     <UploadCollectionItem contributor="{json>contributor}" enableEdit="{json>enableEdit}" enableDelete="{json>enableDelete}"
+      fileName="{json>filename}" mimeType="{json>mimeType}" documentId="{json>documentId}" visibleDelete="true" visibleEdit="false"
+      uploadedDate="{json>uploaded}" url="{json>url}"></UploadCollectionItem>
+     <layoutData>
+      <layout:GridData span="L5 M5 S5" indent="L3 M3 S3"/>
+     </layoutData>
+    </UploadCollection>
+   </form:content>
+  </form:SimpleForm>
+  <!-- Extension Point for Adding new element for Edit Request Detail Fragment -->
+  <core:ExtensionPoint name="extEditRequestDetail" />
+ </layout:VerticalLayout>
+</core:FragmentDefinition>

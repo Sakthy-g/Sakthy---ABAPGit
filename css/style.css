@@ -1,0 +1,28 @@
+.text_bold {
+    font-weight: bold!important
+}
+
+.sapGreyCell {
+    color: grey!important
+}
+
+.strike {
+    text-decoration: line-through
+}
+
+.SFChildPaddingFix .sapUiFormResGridMain .sapUiFormResGridLastContL:nth-child(1) .sapUiFormResGridCont .sapUiRespGridSpanL12,
+.SFChildPaddingFix .sapUiFormResGridMain .sapUiFormResGridLastContL:nth-child(2) .sapUiFormResGridCont .sapUiRespGridSpanL12 {
+    padding: 0rem .0rem!important
+}
+
+.sapThemeFontSize>div {
+    font-size: 1.25rem!important
+}
+
+.sapUiSimpleForm .sapUiSimpleForm .sapUiFormResGrid>div {
+    padding: 0
+}
+
+.sapUiSimpleForm .sapUiSimpleForm .sapUiFormM .sapUiRGLContainerCont {
+    padding-bottom: 0
+}

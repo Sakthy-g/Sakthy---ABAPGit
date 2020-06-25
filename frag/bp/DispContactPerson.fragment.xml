@@ -1,0 +1,48 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+ <f:SimpleForm maxContainerCols="3" editable="false" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12"
+  adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" columnsXL="3" columnsL="3" columnsM="3">
+  <f:toolbar>
+   <Toolbar>
+    <Title level="H4" titleStyle="H4"
+     text="{parts: [{path:'person>/BP_RelationPartnerRel/BP_PersonRel/FIRSTNAME'}, {path:'person>/BP_RelationPartnerRel/BP_PersonRel/LASTNAME'},{path:'person>/BP_RelationPartnerRel/BP_PersonRel/TITLE_ACA1__TXT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getCPTitle'}"/>
+    <Title level="H4" titleStyle="H4"></Title>
+    <ToolbarSpacer/>
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <core:ExtensionPoint name="extDispContactPersonToolbar"/>
+   </Toolbar>
+  </f:toolbar>
+  <f:content>
+   <core:Title text="{i18n>Address}"/>
+   <Label text="{i18n>F_Name}"/>
+   <Text text="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/FIRSTNAME'}"
+    visible="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/FIRSTNAME',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>L_Name}"/>
+   <Text text="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/LASTNAME'}"
+    visible="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/LASTNAME',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>existing_cp}"/>
+   <Text text="{path:'person>/PARTNER2' ,formatter:'fcg.mdg.editbp.util.Formatter.removeLeadingZeroes'}" visible="{path:'person>/PARTNER2',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>TITLE}"/>
+   <Text text="{path:'person>/BP_RelationPartnerRel/TITLE_KEY__TXT'}"
+    visible="{path:'person>/BP_RelationPartnerRel/TITLE_KEY__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>ACAD_TITLE}"/>
+   <Text text="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/TITLE_ACA1__TXT'}"
+    visible="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/TITLE_ACA1__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>GENDER}"/>
+   <Text text="{person>/BP_RelationPartnerRel/BP_PersonRel/SEX__TXT}"
+    visible="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/SEX__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>CLANG}"/>
+   <Text text="{parts:[{path:'person>/BP_RelationPartnerRel/BP_PersonRel/CORRESPONDLANGUAGE'},{path:'person>/BP_RelationPartnerRel/BP_PersonRel/CORRESPONDLANGUAGE__TXT'}],formatter:'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"
+    visible="{path:'person>/BP_RelationPartnerRel/BP_PersonRel/CORRESPONDLANGUAGE',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <core:Title text="{i18n>WP_ADD}"/>
+   <core:Title text="{i18n>IAV}"/>
+   <core:ExtensionPoint name="extDispContactPersonFormContent" />
+  </f:content>
+  <core:ExtensionPoint name="extDispContactPersonForm" />
+ </f:SimpleForm>
+ <core:ExtensionPoint name="extDispContactPersonFormFragment" />
+</core:FragmentDefinition>

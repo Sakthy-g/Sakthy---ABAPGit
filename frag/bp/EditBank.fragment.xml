@@ -1,0 +1,37 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+ <form:SimpleForm id="BankForm" maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+  emptySpanL="4" emptySpanM="4" columnsL="1" editable="true" columnsM="1" class="SFChildPaddingFix">
+  <form:content>
+   <Title id="BDTitle" text="{i18n>bank_acc}" level="H4" titleStyle="H4"></Title>
+   <Label id="SF-BP_BankAccounts-lbl_BANK_CTRY" text="{i18n>CCITY}"></Label>
+   <Input id="SF-BP_BankAccounts-Txt_BANK_CTRY" maxLength="3" showValueHelp="true" valueHelpRequest="onBankCountryVH" change="onBankCountryChange"
+    placeholder="{i18n>PLACEHOLDER_COUNTRY_KEY}" value="{/BANK_CTRY}">
+    <layoutData>
+     <l:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="SF-BP_BankAccounts-Txt_BANK_CTRY__TXT" maxLength="50" enabled="false" change="onChange" value="{/BANK_CTRY__TXT}"></Input>
+   <!-- Changes required for BankKey and BankName ! -->
+   <Label id="SF-BP_BankAccounts-lbl_BANK_KEY" text="{i18n>BAKEY}"></Label>
+   <Input id="SF-BP_BankAccounts-Txt_BANK_KEY" maxLength="15" showValueHelp="true" valueHelpRequest="onBankKeyVH" change="onBankKeyChange"
+    placeholder="{i18n>Bank_Key}" value="{/BANK_KEY}">
+    <layoutData>
+     <l:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="SF-BP_BankAccounts-Txt_BANK_NAME" maxLength="60" enabled="false" change="onChange" value="{/BANK_NAME}"></Input>
+   <!-- <Label text="{i18n>BANAME}"></Label> -->
+   <Label id="SF-BP_BankAccounts-lbl_BANK_ACCT" text="{i18n>bank_acc}"></Label>
+   <Input id="SF-BP_BankAccounts-Txt_BANK_ACCT" maxLength="18" change="onBankAccountChange" value="{/BANK_ACCT}"></Input>
+   <Label id="SF-BP_BankAccounts-lbl_IBAN" text="{i18n>BAIBAN}"></Label>
+   <Input id="SF-BP_BankAccounts-Txt_IBAN" maxLength="34" change="onIBANChange" placeholder="{i18n>IBAN_DESC}" value="{/IBAN}"></Input>
+   <!-- Extension Point for Plant General Data -->
+   <core:ExtensionPoint name="extBDTitle"></core:ExtensionPoint>
+  </form:content>
+ </form:SimpleForm>
+</core:FragmentDefinition>

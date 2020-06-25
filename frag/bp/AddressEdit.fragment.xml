@@ -1,0 +1,63 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<!--  This fragment represents the address formatting for the Organization in any other country apart from USA,Japan,Canada -->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+ <form:SimpleForm id="SFAddressEdit" maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+  emptySpanL="4" emptySpanS="0" emptySpanM="4" labelSpanS="12" columnsL="1" editable="true" columnsM="1" class="paddingFixSF">
+  <form:content >
+   <!-- GENERAL INFORMATIONS -->
+   <Title text="{i18n>Address}" level="H4" titleStyle="H4"></Title>
+   <Label id="lblSTHN" text="{i18n>STHN}"></Label>
+   <Input id="INP-BP_Address-STREET" maxLength="60" change="onChange" value="{/STREET}"></Input>
+   <Input id="INP-BP_Address-HOUSE_NO" maxLength="10" change="onChange" value="{/HOUSE_NO}">
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Label id="lblPC" text="{i18n>PC}"></Label>
+   <Input id="INP-BP_Address-POSTL_COD1" value="{/POSTL_COD1}" maxLength="10" change="fcg.mdg.editbp.handlers.Communication.onPostalCodeChange">
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_Address-CITY" value="{/CITY}" maxLength="40" change="onChange"></Input>
+   <Label id="lblCCITY" text="{i18n>CCITY}" required="true"></Label>
+   <Input id="INP-BP_Address-COUNTRY" value="{/COUNTRY}" valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onCountryVH" maxLength="3" showValueHelp="true"
+    liveChange="fcg.mdg.editbp.handlers.Communication.countryChange" change="fcg.mdg.editbp.handlers.Communication.onCountryKeyChange" placeholder="{i18n>PLACEHOLDER_COUNTRY_KEY}">
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_Address-COUNTRY__TXT" value="{/COUNTRY__TXT}" maxLength="50" enabled="false" change="onChange"></Input>
+   <Label id="lblREG" text="{i18n>REG}"></Label>
+   <Input id="INP-BP_Address-REGION" value="{/REGION}" maxLength="3" showValueHelp="true" valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onRegionVH"
+    change="fcg.mdg.editbp.handlers.Communication.onRegionChange" liveChange="regionChange" placeholder="{i18n>PLACEHOLDER_REGION_KEY}"> 
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_Address-REGION__TXT" value="{/REGION__TXT}" maxLength="20" enabled="false" change="onChange"></Input>
+   <Label id="lblLang" text="{i18n>LANG}"></Label>
+   <Input id="INP-BP_Address-LANGU" value="{/LANGUISO}" valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onCLangVH" maxLength="2" showValueHelp="true" change="fcg.mdg.editbp.handlers.Communication.onCorsLangChange"
+    liveChange="corsLangChange" placeholder="{i18n>PLACEHOLDER_LANGU_KEY}">
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_Address-LANGU__TXT" value="{/LANGU__TXT}" maxLength="50" enabled="false" change="onChange"></Input>
+   <Label id="lblPOBC" text="{i18n>POBC}"></Label>
+   <Input id="INP-BP_Address-PO_BOX" value="{/POSTL_COD2}" maxLength="10" change="onChange"></Input>
+   <Label id="lblCOPC" text="{i18n>COPC}"></Label>
+   <Input id="INP-BP_Address-POSTL_COD3" value="{/POSTL_COD3}" maxLength="10" change="onChange"></Input>
+   <!-- Extension Point for Adding new element for Address form content -->
+   <core:ExtensionPoint name="extEditAddressFormContent" />
+  </form:content>
+  <!-- Extension Point for Adding new element for Address form -->
+  <core:ExtensionPoint name="extEditAddressForm" />
+ </form:SimpleForm>
+ <!-- Extension Point for Adding new element for Address Edit Fragment -->
+ <core:ExtensionPoint name="extEditAddress" />
+</core:FragmentDefinition>

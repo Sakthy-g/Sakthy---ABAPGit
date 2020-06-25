@@ -1,0 +1,43 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition height="100%" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+ <form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" columnsL="3" columnsM="3"
+  emptySpanL="0" emptySpanM="0">
+  <form:toolbar>
+   <Toolbar>
+    <Title level="H4" titleStyle="H4"
+     text="{parts: [{path:'Bank>/BANK_CTRY__TXT'}, {path:'Bank>/BANK_NAME'}, {path:'Bank>/BANK_ACCT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBankTitle'}"/>
+    <Title level="H4" titleStyle="H4"></Title>
+    <ToolbarSpacer/>
+    <Link press="navBackToEditEntityData" text="{i18n>edit}" visible="false"/>
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <!-- Extension Point for Display Bank Detail Toolbar -->
+   <core:ExtensionPoint name="extBDToolbar"></core:ExtensionPoint>
+   </Toolbar>
+  </form:toolbar>
+  <form:content >
+   <core:Title text=""/>
+   <Label text="{i18n>CCITY}"></Label>
+   <Text
+    text="{parts: [{path:'Bank>/BANK_CTRY'}, {path:'Bank>/BANK_CTRY__TXT'}, {path:'Bank>/ChangeData/BANK_CTRY'}], formatter: 'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"/>
+   <Label text="{i18n>BAKEY}"></Label>
+   <Text
+    text="{parts: [{path:'Bank>/BANK_KEY'}, {path:'Bank>/BANK_NAME'}, {path:'Bank>/ChangeData/BANK_KEY'}], formatter: 'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"/>
+   <!-- Extension Point for Display Bank Detail -->
+   <core:ExtensionPoint name="extDisplayBankCol1"></core:ExtensionPoint>
+   <core:Title text=""/>
+   <Label text="{i18n>bank_acc}"></Label>
+   <Text
+    text="{parts: [{path: 'Bank>/BANK_ACCT'}, {path:'Bank>/ChangeData/BANK_ACCT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Bank>/BANK_ACCT', formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>BAIBAN}"></Label>
+   <Text text="{parts: [{path: 'Bank>/IBAN'}, {path:'Bank>/ChangeData/IBAN'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Bank>/IBAN', formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <!-- Extension Point for Display Bank Detail -->
+   <core:ExtensionPoint name="extDisplayBankCol2"></core:ExtensionPoint>
+  </form:content>
+ </form:SimpleForm>
+</core:FragmentDefinition>

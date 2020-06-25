@@ -1,0 +1,40 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+ <form:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" columnsL="3" columnsM="3"
+  emptySpanL="0" emptySpanM="0">
+  <form:toolbar>
+   <Toolbar>
+    <Title text="{i18n>select_OrgData}" level="H4" titleStyle="H4"/>
+    <Title text="{i18n>CHANGE}"  level="H4" titleStyle="H4"/>
+    <ToolbarSpacer/>
+    <!--<Link press="navBackToEditEntityData" text="{i18n>edit}"/>-->
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <core:ExtensionPoint name="extDispGeneralOrgToolbar" />
+   </Toolbar>
+  </form:toolbar>
+  <form:content >
+   <core:Title text="" level="H6"/>
+   <Label text="{i18n>TITLE}"></Label>
+   <Text text="{parts:[{path:'Gen>/TITLE_KEY__TXT'},{path:'Gen>/ChangeData/TITLE_KEY__TXT'}],formatter:'fcg.mdg.editbp.util.Formatter.getBoldText'}" 
+    visible="{path:'Gen>/TITLE_KEY__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>Name1}"></Label>
+   <Text text="{parts:[{path:'Gen>/BP_OrganizationRel/NAME1'}, {path:'Gen>/BP_OrganizationRel/ChangeData/NAME1'}],formatter:'fcg.mdg.editbp.util.Formatter.getBoldText'}" 
+    visible="{path:'Gen>/BP_OrganizationRel/NAME1',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>Name2}"></Label>
+   <Text text="{parts: [{path: 'Gen>/BP_OrganizationRel/NAME2'}, {path:'Gen>/BP_OrganizationRel/ChangeData/NAME2'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}" 
+    visible="{path:'Gen>/BP_OrganizationRel/NAME2',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <core:Title text=""/>
+   <Label text="{i18n>ST1}"></Label>
+   <Text text="{parts: [{path: 'Gen>/SEARCHTERM1'}, {path:'Gen>/ChangeData/SEARCHTERM1'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"  visible="{path:'Gen>/SEARCHTERM1',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>ST2}"></Label>
+   <Text text="{parts: [{path: 'Gen>/SEARCHTERM2'}, {path:'Gen>/ChangeData/SEARCHTERM2'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}" visible="{path:'Gen>/SEARCHTERM2',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <core:ExtensionPoint name="extDispGeneralOrgFormContent" />
+  </form:content>
+  <core:ExtensionPoint name="extDispGeneralOrgForm" />
+ </form:SimpleForm>
+ <core:ExtensionPoint name="extDispGeneralOrgFragment" />
+</core:FragmentDefinition>

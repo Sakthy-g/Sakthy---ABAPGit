@@ -1,0 +1,19 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+ <VBox>
+ <core:InvisibleText id="idInvTextEntityRBG"/>
+ <RadioButtonGroup id="selectDataListRBG" buttons="{/dataitems}" selectedIndex="-1"
+  select="checkDataListSelected">
+  <RadioButton text="{path:'RBText'}" enabled="{path:'enableFlag'}" selected="false"/> 
+  <!-- Extension Point for Adding a radio button to Select Record instance -->
+  <core:ExtensionPoint name="extSelectEntityInstanceRB" />
+  <!--enabled="{path:'Deleted', formatter:'fcg.mdg.editbp.util.Formatter.getEnabled'}"/>-->
+ </RadioButtonGroup>
+ </VBox>
+ <!-- Extension Point for Adding new element for Select Entity Instance fragment -->
+ <core:ExtensionPoint name="extSelectEntityInstance" />
+</core:FragmentDefinition>

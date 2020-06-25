@@ -1,0 +1,31 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition height="100%" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+ <form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" columnsL="3" columnsM="3"
+  emptySpanL="0" emptySpanM="0">
+  <form:toolbar>
+   <Toolbar>
+    <Title level="H4" titleStyle="H4"
+     text="{parts: [{path:'ID>/IDENTIFICATIONTYPE__TXT'}, {path:'ID>/IDENTIFICATIONNUMBER'}], formatter: 'fcg.mdg.editbp.util.Formatter.getIdentificationTitle'}"/>
+    <Title level="H4" titleStyle="H4"></Title>
+    <ToolbarSpacer/>
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <core:ExtensionPoint name="extDispIdentificationToolbar"/>
+   </Toolbar>
+  </form:toolbar>
+  <form:content >
+   <core:Title text=""/>
+   <Label text="{i18n>IdentificationType}"></Label>
+   <Text text="{ID>/IDENTIFICATIONTYPE__TXT}"/>
+   <core:Title text=""/>
+   <Label text="{i18n>Id_num}"></Label>
+   <Text text="{ID>/IDENTIFICATIONNUMBER}"/>
+   <core:ExtensionPoint name="extDispIdentificationFormContent" />
+  </form:content>
+  <core:ExtensionPoint name="extDispIdentificationForm" />
+ </form:SimpleForm>
+ <core:ExtensionPoint name="extDispIdentificationFragment" />
+</core:FragmentDefinition>

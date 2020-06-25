@@ -1,0 +1,31 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+ <form:SimpleForm id="simpleFormGeneralOrg" maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+  emptySpanL="4" emptySpanM="4" columnsL="1" editable="true" columnsM="1" class="SFChildPaddingFix">
+  <form:content >
+   <Title id="GenTitle" text="{i18n>GENERAL}" level="H4" titleStyle="H4"></Title>
+   <Label id="SF-BP_Root-lblTitle" required="true" text="{i18n>TN1}"></Label>
+   <Select change="onChange" id="SF-BP_Root-titleOrg" >
+    <layoutData>
+     <layout:GridData span="L2 M2 S4"/>
+    </layoutData>
+   </Select>
+   <Input change="fcg.mdg.editbp.handlers.GeneralData.onName1Change" id="SF-BP_Organization-name1" maxLength="40"
+    value="{/BP_OrganizationRel/NAME1}"></Input>
+   <Label id="SF-BP_OrganizationRel-lblName2" text="{i18n>Name2}"></Label>
+   <Input change="fcg.mdg.editbp.handlers.GeneralData.onName2Change" id="SF-BP_Organization-name2" maxLength="40"
+    value="{/BP_OrganizationRel/NAME2}"></Input>
+   <Label id="SF-lblST1" text="{i18n>ST1}"></Label>
+   <Input change="fcg.mdg.editbp.handlers.GeneralData.onST1Change" id="SF-BP_Root-searchterm1" maxLength="20" value="{/SEARCHTERM1}"></Input>
+   <Label id="SF-lblST2" text="{i18n>ST2}"></Label>
+   <Input change="fcg.mdg.editbp.handlers.GeneralData.onST2Change" id="SF-BP_Root-searchterm2" maxLength="20" value="{/SEARCHTERM2}"></Input>
+   <core:ExtensionPoint name="extOrgGen"/>
+  </form:content>
+  <core:ExtensionPoint name="extEditGenOrgForm" />
+ </form:SimpleForm>
+ <core:ExtensionPoint name="extEditGenOrgFragment" />
+</core:FragmentDefinition>

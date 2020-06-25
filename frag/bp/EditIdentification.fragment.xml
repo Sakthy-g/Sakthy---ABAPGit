@@ -1,0 +1,25 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+ <l:VerticalLayout width="100%">
+  <form:SimpleForm columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" labelSpanL="3" labelSpanM="3"
+   layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024" class="paddingFixSF">
+   <form:content>
+    <!-- IDENTIFICATION -->
+    <core:Title id="IDTitle" text="{i18n>identification}" level="H4" ></core:Title>
+    <Label id="lblIdType" text="{i18n>IDTY}"></Label>
+    <Select id="SF-BP_IdentificationNumbersRel-IDTYPE" change="onIdentificationTypeChange"></Select>
+    <Label id="lblIdNum" text="{i18n>IDNUM}"></Label>
+    <Input id="SF-BP_IdentificationNumbersRel-IDNUMBER" maxLength="60" change="onIDNumberChange" value="{/IDENTIFICATIONNUMBER}"></Input>
+    <!-- Extends the Identification section of the form -->
+    <core:ExtensionPoint name="extIDNumSectionFormContent"/>
+   </form:content>
+   <core:ExtensionPoint name="extIDNumSectionForm"/>
+  </form:SimpleForm>
+  <!-- Extends the Identification form -->
+  <core:ExtensionPoint name="extEditIdentification"/>
+ </l:VerticalLayout>
+</core:FragmentDefinition>

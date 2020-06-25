@@ -1,0 +1,137 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<!--  This fragment represents the address formatting for the Organization in any other country apart from USA,Japan,Canada -->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+ <form:SimpleForm id="SFAddressContactEdit" maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+  emptySpanL="4" emptySpanS="0" emptySpanM="4" labelSpanS="3" columnsL="1" class="editableForm" editable="true">
+  <form:content>
+   <Title text="{i18n>Communication}" level="H4" titleStyle="H4"/>
+   <Label text="{i18n>TEL}"></Label>
+   <Input id="INP-BP_CommPhone-COUNTRY-0" value="{tel>/COUNTRY}" maxLength="3" placeholder="{i18n>PLACEHOLDER_COUNTRY_KEY}"
+    valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onCommCountryVH"
+    change="fcg.mdg.editbp.handlers.Communication.onCommCountryKeyChange" showValueHelp="true">
+    <layoutData>
+     <l:GridData span="L2 M2 S2"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_CommPhone-TELEPHONE-0" value="{path:'tel>/TELEPHONE',formatter:'fcg.mdg.editbp.util.Formatter.formatCommNumber'}"
+    maxLength="30" placeholder="{i18n>PLACEHOLDER_TN}" change="fcg.mdg.editbp.handlers.Communication.onTelChange">
+    <layoutData>
+     <l:GridData span="L2 M2 S2"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_CommPhone-EXTENSION-0" value="{path:'tel>/EXTENSION',formatter:'fcg.mdg.editbp.util.Formatter.formatCommNumber'}"
+    maxLength="10" placeholder="{i18n>PLACEHOLDER_EXTENSION}" change="onChange">
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+   </Input>
+   <HBox class="sapUiSmallMargin">
+    <core:Icon id="telAdd" src="sap-icon://sys-add" decorative="false" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewTel"/>
+    <core:Icon id="telCancel" src="sap-icon://sys-cancel" decorative="false" tooltip="Cancel"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+    <!-- Extension Point for Adding new element for Telephone -->
+    <core:ExtensionPoint name="extSFAddressAddNewTelElement" />
+   </HBox>
+   <Label text="{i18n>MOB}"></Label>
+   <Input id="INP-BP_CommMobile-COUNTRY-0" value="{mob>/COUNTRY}" maxLength="3" placeholder="{i18n>PLACEHOLDER_COUNTRY_KEY}"
+    change="fcg.mdg.editbp.handlers.Communication.onCommCountryKeyChange"
+    valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onCommCountryVH" showValueHelp="true">
+    <layoutData>
+     <l:GridData span="L2 M2 S2"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_CommMobile-TELEPHONE-0" value="{path:'mob>/TELEPHONE',formatter:'fcg.mdg.editbp.util.Formatter.formatCommNumber'}"
+    maxLength="30" placeholder="{i18n>PLACEHOLDER_MOBNO}" change="fcg.mdg.editbp.handlers.Communication.onMobChange">
+    <layoutData>
+     <l:GridData span="L3 M3 S3"/>
+    </layoutData>
+   </Input>
+   <HBox class="sapUiSmallMargin">
+    <core:Icon id="mobAdd" src="sap-icon://sys-add" decorative="false" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewMob"/>
+    <core:Icon id="mobCancel" src="sap-icon://sys-cancel" decorative="false" tooltip="Cancel"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+    <!-- Extension Point for Adding new element for Mobile -->
+    <core:ExtensionPoint name="extSFAddressAddNewMobElement" />
+   </HBox>
+   <Label text="{i18n>FAX}"></Label>
+   <Input id="INP-BP_CommFax-COUNTRY-0" value="{fax>/COUNTRY}" maxLength="3" placeholder="{i18n>PLACEHOLDER_COUNTRY_KEY}" showValueHelp="true"
+    valueHelpRequest="fcg.mdg.editbp.handlers.Communication.onCommCountryVH"
+    change="fcg.mdg.editbp.handlers.Communication.onCommCountryKeyChange">
+    <layoutData>
+     <l:GridData span="L2 M2 S2"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_CommFax-FAX-0" maxLength="30" value="{path:'fax>/FAX',formatter:'fcg.mdg.editbp.util.Formatter.formatCommNumber'}"
+    placeholder="{i18n>PLACEHOLDER_FAX_NO}" change="fcg.mdg.editbp.handlers.Communication.onFaxChange">
+    <layoutData>
+     <l:GridData span="L2 M2 S2"/>
+    </layoutData>
+   </Input>
+   <Input id="INP-BP_CommFax-EXTENSION-0" maxLength="10"
+    value="{path:'fax>/EXTENSION',formatter:'fcg.mdg.editbp.util.Formatter.formatCommNumber'}" placeholder="{i18n>PLACEHOLDER_EXTENSION}"
+    change="onChange">
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+   </Input>
+   <HBox class="sapUiSmallMargin">
+    <core:Icon id="faxAdd" src="sap-icon://sys-add" decorative="false" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewFax"/>
+    <core:Icon id="faxCancel" src="sap-icon://sys-cancel" decorative="false" tooltip="Cancel"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+    <!-- Extension Point for Adding new element for Fax -->
+    <core:ExtensionPoint name="extSFAddressAddNewFaxElement" />
+   </HBox>
+   <Label text="{i18n>EMAIL}"></Label>
+   <Input id="INP-BP_CommEMail-E_MAIL-0" value="{email>/E_MAIL}" maxLength="241" change="fcg.mdg.editbp.handlers.Communication.onEmailChange">
+    <layoutData>
+     <l:GridData span="L5 M5 S5"/>
+    </layoutData>
+   </Input>
+   <HBox class="sapUiSmallMargin">
+    <core:Icon id="emailAdd" src="sap-icon://sys-add" decorative="false" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewEmail"/>
+    <core:Icon id="emailCancel" src="sap-icon://sys-cancel" decorative="false" tooltip="Cancel"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+    <!-- Extension Point for Adding new element for Email -->
+    <core:ExtensionPoint name="extSFAddressAddNewEmailElement" />
+   </HBox>
+   <Label text="{i18n>WEB}"></Label>
+   <Input id="INP-BP_CommURI-URI-0" value="{uri>/URI}" maxLength="132" change="onChange">
+    <layoutData>
+     <l:GridData span="L5 M5 S5"/>
+    </layoutData>
+   </Input>
+   <HBox class="sapUiSmallMargin">
+    <core:Icon id="uriAdd" src="sap-icon://sys-add" decorative="false" tooltip="Add" class="sapUiSmallMarginEnd"
+     press="fcg.mdg.editbp.handlers.Communication.addNewURI"/>
+    <core:Icon id="uriCancel" src="sap-icon://sys-cancel" decorative="false" tooltip="Cancel"/>
+    <layoutData>
+     <l:GridData span="L1 M1 S1"/>
+    </layoutData>
+    <!-- Extension Point for Adding new element for Website -->
+    <core:ExtensionPoint name="extSFAddressAddNewURIElement" />
+   </HBox>
+   <!-- Extension Point for Adding new element to Communication Details form content-->
+   <core:ExtensionPoint name="extSFAddressContactEdit" />
+  </form:content>
+  <!-- Extension Point for Adding new element to Communication details form element  -->
+  <core:ExtensionPoint name="extEditContactForm" />
+ </form:SimpleForm>
+ <!-- Extension Point for Adding new element for Edit Contact Address Fragment -->
+ <core:ExtensionPoint name="extEditContactAddress" />
+</core:FragmentDefinition>

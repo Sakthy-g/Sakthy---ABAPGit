@@ -1,0 +1,117 @@
+{
+  "cacheControl": [
+    {
+      "maxAge": 86400
+    }
+  ],
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "syavsapfed01_020",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "FED020"
+    },
+    {
+      "path": "/sap/ui5/1/resources/sap/cus/crm/lib/reuse",
+      "target": {
+        "type": "application",
+        "name": "cuscrmlibreuse",
+        "entryPath": "/sap/cus/crm/lib/reuse"
+      },
+      "description": "CRM library (legacy path)"
+    },
+    {
+      "path": "/resources/sap/cus/crm/lib/reuse",
+      "target": {
+        "type": "application",
+        "name": "cuscrmlibreuse",
+        "entryPath": "/sap/cus/crm/lib/reuse"
+      },
+      "description": "CRM library"
+    },
+    {
+      "path": "/sap/ui5/1/resources/sap/retail/store/lib/reuse",
+      "target": {
+        "type": "application",
+        "name": "retailstorelibreuse",
+        "entryPath": "/sap/retail/store/lib/reuse"
+      },
+      "description": "Retail library (legacy path)"
+    },
+    {
+      "path": "/resources/sap/retail/store/lib/reuse",
+      "target": {
+        "type": "application",
+        "name": "retailstorelibreuse",
+        "entryPath": "/sap/retail/store/lib/reuse"
+      },
+      "description": "Retail library"
+    },
+    {
+      "path": "/sap/ui5/1/resources/sap/hcm/lib/common",
+      "target": {
+        "type": "application",
+        "name": "hcmlibcommon",
+        "entryPath": "/sap/hcm/lib/common"
+      },
+      "description": "HCM library (legacy path)"
+    },
+    {
+      "path": "/resources/sap/hcm/lib/common",
+      "target": {
+        "type": "application",
+        "name": "hcmlibcommon",
+        "entryPath": "/sap/hcm/lib/common"
+      },
+      "description": "HCM library"
+    },
+    {
+      "path": "/sap/ui5/1/resources/sap/fcg/mdg/lib/bp",
+      "target": {
+        "type": "application",
+        "name": "fcgmdglibbp",
+        "entryPath": "/sap/fcg/mdg/lib/bp"
+      },
+      "description": "MDG Business Partner Reuse Library (legacy path)"
+    },
+    {
+      "path": "/resources/sap/fcg/mdg/lib/bp",
+      "target": {
+        "type": "application",
+        "name": "fcgmdglibbp",
+        "entryPath": "/sap/fcg/mdg/lib/bp"
+      },
+      "description": "MDG Business Partner Reuse Library"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "syavsapfed01_020",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "FED020"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition height="100%" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+ <form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" columnsL="3" columnsM="3" emptySpanL="0"
+  emptySpanM="0">
+  <form:toolbar>
+   <Toolbar>
+    <Title text="{i18n>select_PersData}" level="H4" titleStyle="H4"/>
+    <Title text="{i18n>CHANGE}" level="H4" titleStyle="H4"/>
+    <ToolbarSpacer/>
+    <!--<Link press="navBackToEditEntityData" text="{i18n>edit}"/>-->
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <core:ExtensionPoint name="extDispPersonToolbar" />
+   </Toolbar>
+  </form:toolbar>
+  <form:content>
+   <core:Title text=""/>
+   <Label text="{i18n>TITLE}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/TITLE_KEY__TXT'}, {path:'Gen>/ChangeData/TITLE_KEY__TXT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/TITLE_KEY__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>ACAD_TITLE}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/BP_PersonRel/TITLE_ACA1__TXT'}, {path:'Gen>/BP_PersonRel/ChangeData/TITLE_ACA1__TXT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/TITLE_ACA1__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>F_Name}"/>
+   <Text
+    text="{parts:[{path:'Gen>/BP_PersonRel/FIRSTNAME'}, {path:'Gen>/BP_PersonRel/ChangeData/FIRSTNAME'}],formatter:'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/FIRSTNAME',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>L_Name}"/>
+   <Text
+    text="{parts:[{path:'Gen>/BP_PersonRel/LASTNAME'}, {path:'Gen>/BP_PersonRel/ChangeData/LASTNAME'}],formatter:'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/LASTNAME',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>DOB}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/BP_PersonRel/BIRTHDATE'}, {path:'Gen>/BP_PersonRel/ChangeData/BIRTHDATE'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/BIRTHDATE',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <core:Title text=""/>
+   <Label text="{i18n>GENDER}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/BP_PersonRel/SEX__TXT'}, {path:'Gen>/BP_PersonRel/ChangeData/SEX__TXT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/SEX__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>MARTIAL}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/BP_PersonRel/MARITALSTATUS__TXT'}, {path:'Gen>/BP_PersonRel/ChangeData/MARITALSTATUS__TXT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/BP_PersonRel/MARITALSTATUS__TXT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>CLANG}"/>
+   <Text
+    text="{parts:[{path:'Gen>/BP_PersonRel/CORRESPONDLANGUAGEISO'},{path:'Gen>/BP_PersonRel/CORRESPONDLANGUAGE__TXT'}, {path:'Gen>/BP_PersonRel/ChangeData/CORRESPONDLANGUAGEISO'}],formatter:'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"
+    visible="{path:'Gen>/BP_PersonRel/CORRESPONDLANGUAGEISO',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>ST1}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/SEARCHTERM1'}, {path:'Gen>/ChangeData/SEARCHTERM1'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/SEARCHTERM1',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <Label text="{i18n>ST2}"/>
+   <Text
+    text="{parts: [{path: 'Gen>/SEARCHTERM2'}, {path:'Gen>/ChangeData/SEARCHTERM2'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible="{path:'Gen>/SEARCHTERM2',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+   <core:ExtensionPoint name="extDispPersonFormContent" />
+  </form:content>
+  <core:ExtensionPoint name="extDispPersonForm" />
+ </form:SimpleForm>
+ <core:ExtensionPoint name="extDispPersonFragment" />
+</core:FragmentDefinition>

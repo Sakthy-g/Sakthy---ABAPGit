@@ -1,0 +1,44 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+ <layout:VerticalLayout width="100%">
+  <form:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0">
+   <form:toolbar>
+    <Toolbar>
+     <Title text="{i18n>REQ_DETAILS}" level="H4" titleStyle="H4"/>
+     <core:ExtensionPoint name="extDispRequestDetailToolbar"/>
+    </Toolbar>
+   </form:toolbar>
+   <form:content >
+    <Label text="{i18n>REASON}"></Label>
+    <Text/>
+    <!-- Extension Point for Adding new element for Display Request Detail Data Form -->
+    <core:ExtensionPoint name="extDispRequestReason"/>
+   </form:content>
+  </form:SimpleForm>
+  <form:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0">
+   <form:toolbar></form:toolbar>
+   <form:content >
+    <List items="{path: '/dataitems'}">
+     <CustomListItem>
+      <HBox>
+       <core:Icon size="2rem" src="{parts:[{path:'mimetype'}],formatter:'fcg.mdg.editbp.util.Formatter.getIcon'}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/> <!-- Getting Icon Dynamically -->
+       <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+        <Link text="{filename}" href="{url}" press="handlePress"/>
+        <Label text="{parts:[{path:'contributor'},{path:'uploaded'}],formatter:'fcg.mdg.editbp.util.Formatter.titleWithName'}"/>
+       </VBox>
+      </HBox>
+     </CustomListItem>
+    </List>
+   </form:content>
+  </form:SimpleForm>
+  <MessageStrip id="idDuplCheckMsg" type="Warning" showIcon="true" class="sapUiSmallMargin">
+   <Link press="onClickDuplicateMsg"></Link>
+  </MessageStrip>
+  <!-- Extension Point for Adding new element for Display Request Detail Fragment -->
+  <core:ExtensionPoint name="extDispRequestDetail"/>
+ </layout:VerticalLayout>
+</core:FragmentDefinition>

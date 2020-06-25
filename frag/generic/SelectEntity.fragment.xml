@@ -1,0 +1,34 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+ <VBox>
+  <core:InvisibleText id="idInvTextRBG"/>
+  <core:InvisibleText id="idInvTextOrgRB" text="{i18n>select_OrgData}"/>
+  <core:InvisibleText id="idInvTextPersRB" text="{i18n>select_PersData}"/>
+  <core:InvisibleText id="idInvTextCommunicationRB" text="{i18n>Addr_Comm}"/>
+  <core:InvisibleText id="idInvTextBankRB" text="{i18n>bank_acc}"/>
+  <core:InvisibleText id="idInvTextIdentificationRB" text="{i18n>identification}"/>
+  <core:InvisibleText id="idInvTextTaxRB" text="{i18n>tax_num}"/>
+  <core:InvisibleText id="idInvTextContactPersonRB" text="{i18n>contact_person}"/>
+
+  <RadioButtonGroup id="entityRBG" selectedIndex="-1" select="checkEntitySelected">
+   <buttons>
+    <RadioButton id="OrgRB" text="{i18n>select_OrgData}" visible="false" ariaDescribedBy="idInvTextRBG idInvTextOrgRB"/>
+    <RadioButton id="PersRB" text="{i18n>select_PersData}" visible="false" ariaDescribedBy="idInvTextRBG idInvTextPersRB"/>
+    <RadioButton id="communicationRB" text="{i18n>Addr_Comm}" ariaDescribedBy="idInvTextRBG idInvTextCommunicationRB"/>
+    <RadioButton id="BankRB" text="{i18n>bank_acc}" ariaDescribedBy="idInvTextRBG idInvTextBankRB"/>
+    <RadioButton id="identificationRB" text="{i18n>identification}" ariaDescribedBy="idInvTextRBG idInvTextIdentificationRB"/>
+    <RadioButton id="taxRB" text="{i18n>tax_num}" ariaDescribedBy="idInvTextRBG idInvTextTaxRB"/>
+    <RadioButton id="ContactPerRB" text="{i18n>contact_person}" ariaDescribedBy="idInvTextRBG idInvTextContactPersonRB"/>
+    <!-- Extension Point for Adding new element for Radio Button for adding a new Entity or Data -->
+    <core:ExtensionPoint name="extSelectEntityRB"/>
+   </buttons>
+  </RadioButtonGroup>
+ </VBox>
+ <!-- Extension Point for Adding new element for Select Entity Fragment -->
+ <core:ExtensionPoint name="extSelectEntity"/>
+ <!--<core:InvisibleText id="idInvTextRBG"/>-->
+</core:FragmentDefinition>

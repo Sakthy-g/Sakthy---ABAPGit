@@ -1,0 +1,895 @@
+{
+  "_version": "1.1.0",
+  "resources": [
+    {
+      "name": "Component-dbg.js",
+      "module": "fcg/mdg/editbp/Component.js",
+      "isDebug": true,
+      "required": [
+        "sap/ui/core/UIComponent.js",
+        "sap/ui/Device.js",
+        "fcg/mdg/editbp/model/models.js"
+      ]
+    },
+    {
+      "name": "Component-preload-dbg.js",
+      "module": "fcg/mdg/editbp/Component-preload-dbg.js",
+      "isDebug": true
+    },
+    {
+      "name": "Component-preload.js",
+      "merged": true
+    },
+    {
+      "name": "Component.js",
+      "module": "fcg/mdg/editbp/Component.js",
+      "required": [
+        "sap/ui/core/UIComponent.js",
+        "sap/ui/Device.js",
+        "fcg/mdg/editbp/model/models.js"
+      ]
+    },
+    {
+      "name": "controller/App-dbg.controller.js",
+      "module": "fcg/mdg/editbp/controller/App.controller.js",
+      "isDebug": true,
+      "required": [
+        "sap/ui/core/mvc/Controller.js",
+        "sap/ui/model/json/JSONModel.js"
+      ]
+    },
+    {
+      "name": "controller/App.controller.js",
+      "module": "fcg/mdg/editbp/controller/App.controller.js",
+      "required": [
+        "sap/ui/core/mvc/Controller.js",
+        "sap/ui/model/json/JSONModel.js"
+      ]
+    },
+    {
+      "name": "controller/Search-dbg.controller.js",
+      "module": "fcg/mdg/editbp/controller/Search.controller.js",
+      "isDebug": true,
+      "required": [
+        "sap/ui/core/mvc/Controller.js"
+      ],
+      "condRequired": [
+        "fcg/mdg/editbp/util/Formatter.js",
+        "fcg/mdg/editbp/util/DataAccess.js"
+      ]
+    },
+    {
+      "name": "controller/Search.controller.js",
+      "module": "fcg/mdg/editbp/controller/Search.controller.js",
+      "required": [
+        "sap/ui/core/mvc/Controller.js"
+      ],
+      "condRequired": [
+        "fcg/mdg/editbp/util/Formatter.js",
+        "fcg/mdg/editbp/util/DataAccess.js"
+      ]
+    },
+    {
+      "name": "controller/Wizard-dbg.controller.js",
+      "module": "fcg/mdg/editbp/controller/Wizard.controller.js",
+      "isDebug": true,
+      "required": [
+        "sap/ui/core/mvc/Controller.js",
+        "sap/ui/core/routing/History.js",
+        "sap/m/MessageToast.js",
+        "sap/m/UploadCollectionParameter.js"
+      ],
+      "condRequired": [
+        "sap/m/MessageBox.js",
+        "fcg/mdg/editbp/util/DataAccess.js",
+        "fcg/mdg/editbp/util/Formatter.js",
+        "fcg/mdg/editbp/handlers/Communication.js",
+        "fcg/mdg/editbp/handlers/BankAccount.js",
+        "fcg/mdg/editbp/handlers/ContactPerson.js",
+        "fcg/mdg/editbp/handlers/GeneralData.js",
+        "fcg/mdg/editbp/handlers/TaxNumbers.js",
+        "fcg/mdg/editbp/handlers/Identification.js",
+        "fcg/mdg/editbp/handlers/Attachment.js"
+      ]
+    },
+    {
+      "name": "controller/Wizard.controller.js",
+      "module": "fcg/mdg/editbp/controller/Wizard.controller.js",
+      "required": [
+        "sap/ui/core/mvc/Controller.js",
+        "sap/ui/core/routing/History.js",
+        "sap/m/MessageToast.js",
+        "sap/m/UploadCollectionParameter.js"
+      ],
+      "condRequired": [
+        "sap/m/MessageBox.js",
+        "fcg/mdg/editbp/util/DataAccess.js",
+        "fcg/mdg/editbp/util/Formatter.js",
+        "fcg/mdg/editbp/handlers/Communication.js",
+        "fcg/mdg/editbp/handlers/BankAccount.js",
+        "fcg/mdg/editbp/handlers/ContactPerson.js",
+        "fcg/mdg/editbp/handlers/GeneralData.js",
+        "fcg/mdg/editbp/handlers/TaxNumbers.js",
+        "fcg/mdg/editbp/handlers/Identification.js",
+        "fcg/mdg/editbp/handlers/Attachment.js"
+      ]
+    },
+    {
+      "name": "css/style-dbg.css",
+      "isDebug": true
+    },
+    {
+      "name": "css/style.css"
+    },
+    {
+      "name": "frag/bp/AddressContactEdit.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/AddressContactEdit.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/HBox.js",
+        "sap/ui/core/Icon.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/AddressEdit.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/AddressEdit.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/AddressEditUS.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/AddressEditUS.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispAddress.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispAddress.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispContactPerson.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispContactPerson.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispDeleteContactPerson.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispDeleteContactPerson.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispGeneralOrg.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispGeneralOrg.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispGeneralPerson.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispGeneralPerson.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispIdentification.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispIdentification.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DispTaxNumber.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DispTaxNumber.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DisplayBank.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DisplayBank.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DisplayChangeCP.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DisplayChangeCP.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Link.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js"
+      ]
+    },
+    {
+      "name": "frag/bp/DuplicateContactPersonList.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/DuplicateContactPersonList.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/m/TableSelectDialog.js",
+        "sap/m/ColumnListItem.js",
+        "sap/m/Text.js",
+        "sap/m/Column.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditBank.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditBank.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditContactPerson.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditContactPerson.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/Select.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditGeneralOrg.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditGeneralOrg.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Select.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/Input.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditGeneralPerson.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditGeneralPerson.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Select.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/Input.js",
+        "sap/m/DatePicker.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditIAVAddressOrg.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditIAVAddressOrg.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/HBox.js",
+        "sap/ui/core/Icon.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditIAVInCP.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditIAVInCP.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/HBox.js",
+        "sap/ui/core/Icon.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditIdentification.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditIdentification.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Select.js",
+        "sap/m/Input.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditTaxNumber.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditTaxNumber.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/ui/core/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/layout/GridData.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/bp/EditWPAddress.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/bp/EditWPAddress.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/ui/layout/GridData.js",
+        "sap/m/HBox.js",
+        "sap/ui/core/Icon.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/generic/DispDuplicate.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/DispDuplicate.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/m/Dialog.js",
+        "sap/m/Table.js",
+        "sap/m/ColumnListItem.js",
+        "sap/m/Text.js",
+        "sap/m/Column.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/m/Button.js"
+      ]
+    },
+    {
+      "name": "frag/generic/DisplayRequestDetail.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/DisplayRequestDetail.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Toolbar.js",
+        "sap/m/Title.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/m/Label.js",
+        "sap/m/Text.js",
+        "sap/m/List.js",
+        "sap/m/CustomListItem.js",
+        "sap/m/HBox.js",
+        "sap/ui/core/Icon.js",
+        "sap/m/VBox.js",
+        "sap/m/Link.js",
+        "sap/m/MessageStrip.js"
+      ]
+    },
+    {
+      "name": "frag/generic/RequestDetail.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/RequestDetail.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/layout/form/SimpleForm.js",
+        "sap/m/Title.js",
+        "sap/m/Label.js",
+        "sap/m/Input.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/m/UploadCollection.js",
+        "sap/m/UploadCollectionItem.js",
+        "sap/ui/layout/GridData.js"
+      ]
+    },
+    {
+      "name": "frag/generic/SelectAction.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/SelectAction.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/m/VBox.js",
+        "sap/ui/core/InvisibleText.js",
+        "sap/m/RadioButtonGroup.js",
+        "sap/m/RadioButton.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/generic/SelectEntity.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/SelectEntity.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/m/VBox.js",
+        "sap/ui/core/InvisibleText.js",
+        "sap/m/RadioButtonGroup.js",
+        "sap/m/RadioButton.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/generic/SelectEntityInstance.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/SelectEntityInstance.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/m/VBox.js",
+        "sap/ui/core/InvisibleText.js",
+        "sap/m/RadioButtonGroup.js",
+        "sap/m/RadioButton.js",
+        "sap/ui/core/ExtensionPoint.js"
+      ]
+    },
+    {
+      "name": "frag/generic/search.fragment.xml",
+      "module": "fcg/mdg/editbp/frag/generic/search.fragment.xml",
+      "required": [
+        "sap/ui/core/Fragment.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+        "sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/m/MessageStrip.js",
+        "sap/ui/comp/smarttable/SmartTable.js",
+        "sap/ui/core/CustomData.js",
+        "sap/m/Toolbar.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Button.js",
+        "sap/m/Table.js",
+        "sap/m/Column.js",
+        "sap/m/Text.js",
+        "sap/m/ColumnListItem.js",
+        "sap/ui/core/Icon.js",
+        "sap/m/ObjectIdentifier.js"
+      ]
+    },
+    {
+      "name": "handlers/Attachment-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/Attachment.js",
+      "isDebug": true,
+      "required": [
+        "sap/m/UploadCollectionParameter.js",
+        "sap/m/MessageBox.js"
+      ]
+    },
+    {
+      "name": "handlers/Attachment.js",
+      "module": "fcg/mdg/editbp/handlers/Attachment.js",
+      "required": [
+        "sap/m/UploadCollectionParameter.js",
+        "sap/m/MessageBox.js"
+      ]
+    },
+    {
+      "name": "handlers/BankAccount-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/BankAccount.js",
+      "isDebug": true,
+      "required": [
+        "fcg/mdg/editbp/util/DataAccess.js"
+      ]
+    },
+    {
+      "name": "handlers/BankAccount.js",
+      "module": "fcg/mdg/editbp/handlers/BankAccount.js",
+      "required": [
+        "fcg/mdg/editbp/util/DataAccess.js"
+      ]
+    },
+    {
+      "name": "handlers/Communication-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/Communication.js",
+      "isDebug": true
+    },
+    {
+      "name": "handlers/Communication.js",
+      "module": "fcg/mdg/editbp/handlers/Communication.js"
+    },
+    {
+      "name": "handlers/ContactPerson-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPerson.js",
+      "isDebug": true,
+      "required": [
+        "fcg/mdg/editbp/handlers/ContactPersonCreate.js",
+        "fcg/mdg/editbp/handlers/ContactPersonChange.js"
+      ]
+    },
+    {
+      "name": "handlers/ContactPerson.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPerson.js",
+      "required": [
+        "fcg/mdg/editbp/handlers/ContactPersonCreate.js",
+        "fcg/mdg/editbp/handlers/ContactPersonChange.js"
+      ]
+    },
+    {
+      "name": "handlers/ContactPersonChange-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPersonChange.js",
+      "isDebug": true
+    },
+    {
+      "name": "handlers/ContactPersonChange.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPersonChange.js"
+    },
+    {
+      "name": "handlers/ContactPersonCreate-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPersonCreate.js",
+      "isDebug": true
+    },
+    {
+      "name": "handlers/ContactPersonCreate.js",
+      "module": "fcg/mdg/editbp/handlers/ContactPersonCreate.js"
+    },
+    {
+      "name": "handlers/GeneralData-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/GeneralData.js",
+      "isDebug": true,
+      "required": [
+        "fcg/mdg/editbp/handlers/Attachment.js"
+      ]
+    },
+    {
+      "name": "handlers/GeneralData.js",
+      "module": "fcg/mdg/editbp/handlers/GeneralData.js",
+      "required": [
+        "fcg/mdg/editbp/handlers/Attachment.js"
+      ]
+    },
+    {
+      "name": "handlers/Identification-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/Identification.js",
+      "isDebug": true
+    },
+    {
+      "name": "handlers/Identification.js",
+      "module": "fcg/mdg/editbp/handlers/Identification.js"
+    },
+    {
+      "name": "handlers/TaxNumbers-dbg.js",
+      "module": "fcg/mdg/editbp/handlers/TaxNumbers.js",
+      "isDebug": true
+    },
+    {
+      "name": "handlers/TaxNumbers.js",
+      "module": "fcg/mdg/editbp/handlers/TaxNumbers.js"
+    },
+    {
+      "name": "i18n/i18n.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n.properties",
+      "locale": "",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_cs.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_cs.properties",
+      "locale": "cs",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_de.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_de.properties",
+      "locale": "de",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_en.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_en.properties",
+      "locale": "en",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_en_US_sappsd.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_en_US_sappsd.properties",
+      "locale": "en_US_sappsd",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_en_US_saptrc.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_en_US_saptrc.properties",
+      "locale": "en_US_saptrc",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_es.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_es.properties",
+      "locale": "es",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_fr.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_fr.properties",
+      "locale": "fr",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_hu.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_hu.properties",
+      "locale": "hu",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_it.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_it.properties",
+      "locale": "it",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_iw.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_iw.properties",
+      "locale": "iw",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_ja.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_ja.properties",
+      "locale": "ja",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_ko.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_ko.properties",
+      "locale": "ko",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_nl.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_nl.properties",
+      "locale": "nl",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_no.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_no.properties",
+      "locale": "no",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_pl.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_pl.properties",
+      "locale": "pl",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_pt.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_pt.properties",
+      "locale": "pt",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_ru.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_ru.properties",
+      "locale": "ru",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_sv.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_sv.properties",
+      "locale": "sv",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_tr.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_tr.properties",
+      "locale": "tr",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "i18n/i18n_zh_CN.properties",
+      "module": "fcg/mdg/editbp/i18n/i18n_zh_CN.properties",
+      "locale": "zh_CN",
+      "raw": "i18n/i18n.properties"
+    },
+    {
+      "name": "localService/metadata.xml"
+    },
+    {
+      "name": "localService/mockserver-dbg.js",
+      "isDebug": true
+    },
+    {
+      "name": "localService/mockserver.js"
+    },
+    {
+      "name": "manifest.json",
+      "module": "fcg/mdg/editbp/manifest.json"
+    },
+    {
+      "name": "model/formatter-dbg.js",
+      "module": "fcg/mdg/editbp/model/formatter.js",
+      "isDebug": true
+    },
+    {
+      "name": "model/formatter.js",
+      "module": "fcg/mdg/editbp/model/formatter.js"
+    },
+    {
+      "name": "model/models-dbg.js",
+      "module": "fcg/mdg/editbp/model/models.js",
+      "isDebug": true,
+      "required": [
+        "sap/ui/model/json/JSONModel.js",
+        "sap/ui/Device.js"
+      ]
+    },
+    {
+      "name": "model/models.js",
+      "module": "fcg/mdg/editbp/model/models.js",
+      "required": [
+        "sap/ui/model/json/JSONModel.js",
+        "sap/ui/Device.js"
+      ]
+    },
+    {
+      "name": "neo-app.json"
+    },
+    {
+      "name": "resources.json"
+    },
+    {
+      "name": "util/DataAccess-dbg.js",
+      "module": "fcg/mdg/editbp/util/DataAccess.js",
+      "isDebug": true
+    },
+    {
+      "name": "util/DataAccess.js",
+      "module": "fcg/mdg/editbp/util/DataAccess.js"
+    },
+    {
+      "name": "util/Formatter-dbg.js",
+      "module": "fcg/mdg/editbp/util/Formatter.js",
+      "isDebug": true
+    },
+    {
+      "name": "util/Formatter.js",
+      "module": "fcg/mdg/editbp/util/Formatter.js"
+    },
+    {
+      "name": "version.json"
+    },
+    {
+      "name": "view/App.view.xml",
+      "module": "fcg/mdg/editbp/view/App.view.xml",
+      "required": [
+        "sap/ui/core/mvc/XMLView.js",
+        "fcg/mdg/editbp/controller/App.controller.js",
+        "sap/m/App.js"
+      ]
+    },
+    {
+      "name": "view/Search.view.xml",
+      "module": "fcg/mdg/editbp/view/Search.view.xml",
+      "required": [
+        "sap/ui/core/mvc/XMLView.js",
+        "fcg/mdg/editbp/controller/Search.controller.js",
+        "sap/m/Page.js"
+      ]
+    },
+    {
+      "name": "view/Wizard.view.xml",
+      "module": "fcg/mdg/editbp/view/Wizard.view.xml",
+      "required": [
+        "sap/ui/core/mvc/XMLView.js",
+        "fcg/mdg/editbp/controller/Wizard.controller.js",
+        "sap/m/NavContainer.js",
+        "sap/m/Page.js",
+        "sap/m/Wizard.js",
+        "sap/m/WizardStep.js",
+        "sap/m/Text.js",
+        "sap/ui/layout/VerticalLayout.js",
+        "sap/ui/layout/Grid.js",
+        "sap/m/VBox.js",
+        "sap/ui/layout/GridData.js",
+        "sap/ui/core/ExtensionPoint.js",
+        "sap/m/Toolbar.js",
+        "sap/m/ToolbarSpacer.js",
+        "sap/m/Button.js",
+        "sap/m/Bar.js",
+        "sap/m/Title.js"
+      ]
+    }
+  ]
+}

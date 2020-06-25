@@ -1,0 +1,32 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition height="100%" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+ <form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0"
+  emptySpanM="0" columnsL="2" columnsM="2">
+  <form:toolbar>
+   <Toolbar>
+    <Title level="H4" titleStyle="H4"
+     text="{parts: [{path:'Tax>/TAXTYPE'}, {path:'Tax>/TAXDESC'}, {path:'Tax>/TAXNUMBER'}], formatter: 'fcg.mdg.editbp.util.Formatter.getTaxTitle'}"/>
+    <Title level="H4" titleStyle="H4"></Title>
+    <ToolbarSpacer/>
+    <!--<Link press="navBackToEditEntityData" text="{i18n>edit}"/>-->
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <core:ExtensionPoint name="extDispTaxToolbar"/>
+   </Toolbar>
+  </form:toolbar>
+  <form:content >
+   <core:Title text=""/>
+   <Label text="{i18n>TNCAT}"></Label>
+   <Text text="{parts: [{path:'Tax>/TAXTYPE'}, {path:'Tax>/TAXDESC'} ], formatter: 'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"/>
+   <core:Title text=""/>
+   <Label text="{i18n>TNUM}"></Label>
+   <Text text="{parts: [{path: 'Tax>/TAXNUMBER'}, {path:'Tax>/changeData/TAXNUMBER'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"/>
+   <core:ExtensionPoint name="extDispTaxContent"/>
+  </form:content>
+  <core:ExtensionPoint name="extDispTaxForm"/>
+ </form:SimpleForm>
+ <core:ExtensionPoint name="extOrgGen"/>
+</core:FragmentDefinition>

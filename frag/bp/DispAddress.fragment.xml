@@ -1,0 +1,65 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+  <f:SimpleForm maxContainerCols="3" editable="false" layout="ResponsiveGridLayout" 
+   labelSpanXL="12" labelSpanL="12" labelSpanM="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" columnsXL="3"
+   columnsL="3" columnsM="3" >
+   <f:toolbar>
+   <Toolbar>
+    <Title text="{i18n>Addr_Comm}" level="H4" titleStyle="H4"/>
+    <Title text="{i18n>CHANGE}" level="H4" titleStyle="H4"/>
+    <ToolbarSpacer/>
+    <!--<Link press="navBackToEditEntityData" text="{i18n>edit}"/>-->
+    <Link press="undoEntityData" text="{i18n>Undo}"/>
+    <!-- Extension Point for Adding new element for Display Address Toolbar -->
+    <core:ExtensionPoint name="extDispAddressToolbar" />
+   </Toolbar>
+  </f:toolbar>
+   <f:content>
+    <core:Title text="{i18n>Address}"/>
+    <Label text="{i18n>Street}" />
+    <Text  text="{parts: [{path: '/STREET'}, {path:'/ChangeData/STREET'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/STREET',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>House Number}" />
+    <Text  text="{parts: [{path: '/HOUSE_NO'}, {path:'/ChangeData/HOUSE_NO'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/HOUSE_NO',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>POSTCODE}" />
+    <Text text="{parts: [{path: '/POSTL_COD1'}, {path:'/ChangeData/POSTL_COD1'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/POSTL_COD1',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>CITY}" />
+    <Text  text="{parts: [{path: '/CITY'}, {path:'/ChangeData/CITY'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/CITY',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>CCITY}" />
+    <Text  text="{parts:[{path:'/COUNTRY'},{path:'/COUNTRY__TXT'},{path:'/ChangeData/COUNTRY'}],formatter:'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"
+    visible = "{path:'/COUNTRY',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>REG}" />
+    <Text  text="{parts:[{path:'/REGION'},{path:'/REGION__TXT'},{path:'/ChangeData/REGION'}],formatter:'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"
+    visible = "{path:'/REGION',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>DISTRICT}" />
+    <Text  text="{parts: [{path: '/DISTRICT'}, {path:'/ChangeData/DISTRICT'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/DISTRICT',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>LANGUAGE}" />
+    <Text  text="{parts:[{path:'/LANGUISO'},{path:'/LANGU__TXT'},{path:'/ChangeData/LANGUISO'}],formatter:'fcg.mdg.editbp.util.Formatter.getKeyDesc'}"
+    visible = "{path:'/LANGUISO',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>POBC}" />
+    <Text  text="{parts: [{path: '/POSTL_COD2'}, {path:'/ChangeData/POSTL_COD2'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/POSTL_COD2',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+    <Label text="{i18n>COPC}" />
+    <Text  text="{parts: [{path: '/POSTL_COD3'}, {path:'/ChangeData/POSTL_COD3'}], formatter: 'fcg.mdg.editbp.util.Formatter.getBoldText'}"
+    visible = "{path:'/POSTL_COD3',formatter:'fcg.mdg.editbp.util.Formatter.visibility'}"/>
+
+    <core:Title text="{i18n>Communication}" />
+
+    <core:Title text="{i18n>IAV}"/>
+    <!-- Extension Point for Adding new element for Display Address Form Content-->
+    <core:ExtensionPoint name="extDispAddressFormContentr" />
+   </f:content>
+   <!-- Extension Point for Adding new element for Display Address Form -->
+   <core:ExtensionPoint name="extDispAddressForm" />
+  </f:SimpleForm>
+  <!-- Extension Point for Adding new element for Display Address Fragment-->
+  <core:ExtensionPoint name="extDispAddressFragment" />
+</core:FragmentDefinition>

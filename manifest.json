@@ -1,0 +1,158 @@
+{
+ "_version": "1.2.0",
+ "sap.app": {
+  "_version": "1.2.0",
+  "id": "fcg.mdg.editbp",
+  "type": "application",
+  "resources": "resources.json",
+  "i18n": "i18n/i18n.properties",
+  "title": "{{appTitle}}",
+  "description": "{{appDescription}}",
+  "applicationVersion": {
+   "version": "2.0.107"
+  },
+  "ach": "CA-MDG-UI5",
+  "dataSources": {
+   "mainService": {
+    "uri": "/sap/opu/odata/sap/MDG_EDIT_CUSTOMER/",
+    "type": "OData",
+    "settings": {
+     "odataVersion": "2.0",
+     "localUri": "localService/metadata.xml"
+    }
+   }
+  },
+  "sourceTemplate": {
+   "id": "sap.ui.ui5-template-plugin.1worklist",
+   "version": "1.36.2"
+  }
+ },
+ "sap.fiori": {
+  "_version": "1.1.0",
+  "registrationIds": [
+   "F2308"
+  ],
+  "archeType": "transactional"
+ },
+ "sap.ui": {
+  "_version": "1.2.0",
+  "technology": "UI5",
+  "icons": {
+   "icon": "sap-icon://task",
+   "favIcon": "",
+   "phone": "",
+   "phone@2": "",
+   "tablet": "",
+   "tablet@2": ""
+  },
+  "deviceTypes": {
+   "desktop": true,
+   "tablet": true,
+   "phone": true
+  },
+  "supportedThemes": [
+   "sap_hcb",
+   "sap_bluecrystal"
+  ]
+ },
+ "sap.ui5": {
+  "_version": "1.2.0",
+  "rootView": {
+   "viewName": "fcg.mdg.editbp.view.App",
+   "type": "XML",
+   "id": "app"
+  },
+  "config": {
+   "sapFiori2Adaptation": true,
+   "fullWidth": true
+  },
+  "dependencies": {
+   "minUI5Version": "1.38.9",
+   "libs": {
+    "sap.ui.core": {
+     "minVersion": "1.36.0"
+    },
+    "sap.m": {
+     "minVersion": "1.36.0"
+    },
+    "sap.ushell": {
+     "minVersion": "1.36.0"
+    },
+    "sap.ca.ui": {
+     "minVersion": "1.36.0",
+     "lazy": true
+    },
+    "sap.ui.layout": {
+     "minVersion": "1.36.0",
+     "lazy": true
+    },
+    "sap.ui.comp": {
+     "minVersion": "1.36.0",
+     "lazy": true
+    }
+   }
+  },
+  "contentDensities": {
+   "compact": true,
+   "cozy": true
+  },
+  "models": {
+   "i18n": {
+    "type": "sap.ui.model.resource.ResourceModel",
+    "settings": {
+     "bundleName": "fcg.mdg.editbp.i18n.i18n"
+    }
+   },
+   "": {
+    "dataSource": "mainService",
+    "settings": {
+     "metadataUrlParams": {
+      "sap-documentation": "heading"
+     }
+    }
+   }
+  },
+  "routing": {
+   "config": {
+    "fullWidth": true,
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "transition": "slide",
+    "controlId": "app",
+    "clearTarget": true,
+    "controlAggregation": "pages",
+    "bypassed": {
+     "target": ["notFound"]
+    },
+    "viewPath": "fcg.mdg.editbp.view"
+   },
+   "routes": [{
+     "pattern": "wizard/{cateogory}/{selectedItem}/{customerID}/{RowId}",
+     "name": "wizard",
+     "target": ["wizard"]
+    },
+    {
+     "pattern": "",
+     "name": "search",
+     "target": ["search"]
+    }
+   ],
+   "targets": {
+    "wizard": {
+     "viewName": "Wizard",
+     "viewId": "wizard",
+     "viewLevel": 1
+    },
+    "search": {
+     "viewName": "Search",
+     "viewId": "search"
+    }
+   }
+  },
+  "componentName": "fcg.mdg.editbp"
+ },
+ "sap.platform.abap": {
+  "_version": "1.1.0",
+  "uri": "/sap/bc/ui5_ui5/sap/mdg_edit_bp"
+ }
+}

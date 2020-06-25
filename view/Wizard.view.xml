@@ -1,0 +1,108 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+ controllerName="fcg.mdg.editbp.controller.Wizard" xmlns:html="http://www.w3.org/1999/xhtml">
+ <NavContainer id="wizardNavContainer">
+  <pages>
+   <Page id="wizardContentPage" title="{i18n>ListReportTitle}" showNavButton="true" navButtonPress="pressBack">
+    <content>
+     <Wizard id="wizardId" enableBranching="true" complete="onWizardComplete">
+      <WizardStep id="entityStep" title="{i18n>sel_data}" validated="true" subsequentSteps="actionStep, requestStep" complete="goToActionStep"
+       activate="checkEntitySelected">
+        <Text id="customerHeader" class="sapUiSmallMarginBottom" width="100%"/>
+       <layout:VerticalLayout id="entityLayout"/>
+      </WizardStep>
+      <WizardStep id="actionStep" title="{i18n>sel_action}" validated="true" subsequentSteps="communicationStep, selectEntityInstanceStep, editStep"
+       activate="checkActionSelected" complete="goToNextActionStep">
+       <layout:VerticalLayout id="actionLayout"/>
+      </WizardStep>
+      <WizardStep id="requestStep" validated="false">
+       <layout:Grid id="requestLayout" defaultSpan="L12 M12 S12"/>
+      </WizardStep>
+      <WizardStep id="selectEntityInstanceStep" validated="true" subsequentSteps="communicationStep, editStep"
+       complete="goToSelectDataStep" activate="checkDataListSelected">
+       <layout:VerticalLayout id="selectEntityInstanceLayout"/>
+      </WizardStep>
+      <WizardStep id="communicationStep" validated="false">
+       <VBox id="communicationLayout">
+        <layoutData>
+         <layout:GridData span="L12 M12 S12"/>
+        </layoutData>
+       </VBox>
+      </WizardStep>
+      <WizardStep id="editStep" validated="false" activate="checkEditValidated">
+       <layout:Grid id="editLayout" defaultSpan="L12 M12 S12" class="sapUiNoContentPadding" />
+      </WizardStep>
+      <core:ExtensionPoint name="extWizardStep" />
+     </Wizard>
+    </content>
+    <footer>
+     <Toolbar>
+      <ToolbarSpacer/>
+      <Button id="wizardCancel" text="{i18n>cancel}" press="onCancel"></Button>
+      <core:ExtensionPoint name="extWizardToolbar" />
+     </Toolbar>
+    </footer>
+   </Page>
+   <Page id="idSummary" showFooter="true">
+    <customHeader >
+     <Bar>
+      <!--<contentLeft>-->
+      <!-- <Button icon="sap-icon://nav-back" press="backToWizardContent"></Button>-->
+      <!--</contentLeft>-->
+      <contentMiddle>
+       <Title id="reviewtitle"/>
+      </contentMiddle>
+     </Bar>
+    </customHeader >
+
+    <content>
+     <layout:VerticalLayout id="requestDetailLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="requestDetailCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="organizationLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="GeneralDataChangeLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="addrsCommnctnLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="addrsCommnCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="addrsCommnChangeLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="addrsCommnDeleteLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="bankLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="bankCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="bankChangeLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="bankDeleteLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="identificationLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="identCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="identDeleteLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="taxLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="TaxCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="TaxChangeLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="TaxDeleteLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <layout:VerticalLayout id="contactPersonLayout" width="100%" visible="false">
+      <layout:VerticalLayout id="cpCreateLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="cpChangeLayout" width="100%" visible="false"></layout:VerticalLayout>
+      <layout:VerticalLayout id="cpDeleteLayout" width="100%" visible="false"></layout:VerticalLayout>
+     </layout:VerticalLayout>
+     <core:ExtensionPoint name="extSummaryLayout" />
+    </content>
+    <footer>
+     <Toolbar>
+      <ToolbarSpacer/>
+      <Button id = "idSubmit" text="{i18n>submit}" type="Emphasized" press="onSubmit"></Button>
+      <Button id = "idMakeAnotherChange" text="{i18n>edit_Button}" press="navToSelectEntity"></Button>
+      <Button  id="reviewCancel" text="{i18n>cancel}" press="onCancel"></Button>
+      <core:ExtensionPoint name="extSummaryToolbar" />
+     </Toolbar>
+    </footer>
+   </Page>
+   <core:ExtensionPoint name="extWizardPage" />
+  </pages>
+ </NavContainer>
+</mvc:View>

@@ -1,0 +1,53 @@
+<!--
+
+    Copyright (C) 2009-2018 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+ <l:VerticalLayout width="100%">
+   <form:SimpleForm columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" labelSpanL="3" id="SimpleCPForm" labelSpanM="3"
+    layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024" class="paddingFixSF">
+    <form:content>
+     <!-- GENERAL INFORMATIONS -->
+     <Title id="ContPersTitle" text="{i18n>CONTACT_PERS_DET}" level="H4" titleStyle="H4"></Title>
+     <Label id="SF-lblFirstName" text="{i18n>FNCP}"></Label>
+     <Input id="SF-BP_Person-FirstName" liveChange="firstNameChange" change="onFirstNameChange" maxLength="40" value="{PERSON>/FIRSTNAME}">
+      <layoutData>
+       <l:GridData span="L2 M2 S6"/>
+      </layoutData>
+     </Input>
+     <Input id="SF-BP_Person-LastName" liveChange="lastNameChange" change="onLastNameChange" maxLength="40" value="{PERSON>/LASTNAME}">
+      <layoutData>
+       <l:GridData span="L2 M2 S6"/>
+      </layoutData>
+     </Input>
+     <Input id="SF-BP_Relation-partnerId" liveChange="partnerIdChange" change="onPartnerIdChange" maxLength="10" showValueHelp="true"
+      valueHelpRequest="onPartnerVH" value="{/PARTNER2}"></Input>
+     <Label id="SF-lblCPTitle" text="{i18n>TITLE_ACD}"></Label>
+     <Select id="SF-BP_RelationPartner-title" change="onTitleChange">
+      <layoutData>
+       <l:GridData span="L2 M2 S6"/>
+      </layoutData>
+     </Select>
+     <Select id="SF-BP_Person-AcadTitle" change="onChange"></Select>
+     <Label id="SF-lblGender" text="{i18n>GENDER}"></Label>
+     <Select id="SF-BP_Person-Gender" change="onGenderChange">
+      <layoutData>
+       <l:GridData span="L2 M2 S6"/>
+      </layoutData>
+     </Select>
+     <Label id="SF-lblCorrespondenceLanguage" text="{i18n>CLANG}"></Label>
+     <Input change="onCorsLangChange" id="SF-BP_Person-LanguageKey" liveChange="corsLangChange" maxLength="2" showValueHelp="true"
+      valueHelpRequest="onCLangVH" value="{PERSON>/CORRESPONDLANGUAGEISO}">
+      <layoutData>
+       <l:GridData span="L2 M2 S4"/>
+      </layoutData>
+     </Input>
+     <Input enabled="false" id="SF-BP_Person-LanguageDesc" change="onChange" maxLength="50" value="{PERSON>/CORRESPONDLANGUAGE__TXT}"></Input>
+     <core:ExtensionPoint name="extEditContactPersonFormContent" />
+    </form:content>
+    <core:ExtensionPoint name="extEditContactPersonForm" />
+   </form:SimpleForm>
+   <core:ExtensionPoint name="extEditContactPersonFragment" />
+ </l:VerticalLayout>
+</core:FragmentDefinition>
